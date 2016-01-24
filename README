@@ -1,0 +1,10 @@
+Copyright (c) 2016 Marco Tompitak
+See LICENSE file for more copyright details.
+
+This python module is an implementation of the Dynamic Color Binning algorithm, described in more detail here:
+
+http://www.rapiddiffusion.com/datascience/image-analysis-dynamic-color-binning/
+
+analyze_map.py provides a script that analyzes a set of images assumed to be in a single folder on their own.
+
+dynamiccolorbinning.py is a python module providing the back-end calculations for the algorithm.
