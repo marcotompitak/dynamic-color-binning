@@ -146,11 +146,11 @@ class ColorList:
             paletteimg = np.append(paletteimg, pixels)
 
         paletteimg = np.reshape(
-            paletteimg, (paletteimg.size/(3*barwidth), barwidth, 3))
+            paletteimg, (paletteimg.size//(3*barwidth), barwidth, 3))
 
         counter = 0
         for color in self.colorlist:
-            y = barheight/2 + barheight*counter
+            y = barheight//2 + barheight*counter
             cv2.putText(paletteimg,
                         str(rgb2hex([x/255.0 for x in color[0:2:-1]])),
                         (10, y),
@@ -299,9 +299,9 @@ class SetOfMaps:
         # Clean up dataframe (sorting columns, setting NaN to 0)
         # self.dataframe.sort_index(inplace=True)
         self.dataframe.fillna(0, inplace=True)
-        self.dataframe = self.dataframe.reindex_axis(sorted(
+        self.dataframe = self.dataframe[sorted(
             self.dataframe.columns,
-            key=lambda x: self.dataframe[x].sum(), reverse=True), axis=1)
+            key=lambda x: self.dataframe[x].sum(), reverse=True)]
 
     def filter_dataframe(self, thresh):
         """
@@ -342,13 +342,13 @@ class SetOfMaps:
 
         # Create a 2D image array from the flat list
         paletteimg = np.reshape(
-            paletteimg, (paletteimg.size/(3*barwidth), barwidth, 3))
+            paletteimg, (paletteimg.size//(3*barwidth), barwidth, 3))
 
         # Overlay hex color codes as text
         counter = 0
         for col in cols:
             color = list(literal_eval(col))
-            y = barheight/2 + barheight*counter
+            y = barheight//2 + barheight*counter
             cv2.putText(paletteimg,
                         str(rgb2hex([x/255.0 for x in color[::-1]])),
                         (10, y),
