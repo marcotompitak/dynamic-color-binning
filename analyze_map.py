@@ -36,18 +36,10 @@ This color will be used for the text overlays in the color palette.
 import os
 import re
 import sys
-from ast import literal_eval
-
-import numpy as np
-import pandas as pd
-from matplotlib.colors import hex2color, rgb2hex
+from matplotlib.colors import hex2color
 
 import cv2
 import dynamiccolorbinning as dcb
-from colormath.color_conversions import convert_color
-from colormath.color_diff import delta_e_cie2000
-from colormath.color_objects import LabColor, sRGBColor
-
 filterstrength = 0
 
 
