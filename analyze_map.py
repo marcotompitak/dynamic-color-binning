@@ -100,12 +100,12 @@ Maps.filter_dataframe(4000)
 
 
 # Convert headers to hex color codes and store as csv.
-print("Saving output to " + folder + ".csv")
+print(f"Saving output to {folder}.csv")
 Maps.hexheader_dataframe().to_csv(folder+'.csv')
 
 
 # Generate and save palette of abundant colors.
-print("Saving palette to " + folder + "_palette.png")
+print(f"Saving palette to {folder}_palette.png")
 paletteimg = Maps.palette(uniquecolor)
 cv2.imwrite(folder+'_palette.png', paletteimg)
 
